@@ -4,13 +4,15 @@ install:
 
 test:
 	python -m pytest -vv --cov=main test_*.py
+	python -m pytest --nbval *.ipynb
 
 format:	
-	black *.py 
+	black *.py
+	nbqa black *.ipynb
 
 lint:
-	pylint --disable=R,C --ignore-patterns=test_.*?py *.py
-
+	nbqa ruff *.ipynb
+	ruff check *.py
 deploy:
 	python aircraft_analytics.py
 		
