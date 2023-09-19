@@ -1,4 +1,7 @@
-[![CI](https://github.com/nogibjj/Week-3-Polars-Descriptive-Statistics-Osama/actions/workflows/cicd.yml/badge.svg)](https://github.com/nogibjj/Week-3-Polars-Descriptive-Statistics-Osama/actions/workflows/cicd.yml)
+[![Format](https://github.com/nogibjj/Osama---Continuous-Integration-using-GitHub-Actions-of-Python-Data-Science-Project/actions/workflows/format.yml/badge.svg)](https://github.com/nogibjj/Osama---Continuous-Integration-using-GitHub-Actions-of-Python-Data-Science-Project/actions/workflows/format.yml)
+[![OnInstall](https://github.com/nogibjj/Osama---Continuous-Integration-using-GitHub-Actions-of-Python-Data-Science-Project/actions/workflows/install.yml/badge.svg)](https://github.com/nogibjj/Osama---Continuous-Integration-using-GitHub-Actions-of-Python-Data-Science-Project/actions/workflows/install.yml)
+[![Lint](https://github.com/nogibjj/Osama---Continuous-Integration-using-GitHub-Actions-of-Python-Data-Science-Project/actions/workflows/lint.yml/badge.svg)](https://github.com/nogibjj/Osama---Continuous-Integration-using-GitHub-Actions-of-Python-Data-Science-Project/actions/workflows/lint.yml)
+[![Test](https://github.com/nogibjj/Osama---Continuous-Integration-using-GitHub-Actions-of-Python-Data-Science-Project/actions/workflows/test.yml/badge.svg)](https://github.com/nogibjj/Osama---Continuous-Integration-using-GitHub-Actions-of-Python-Data-Science-Project/actions/workflows/test.yml)
 
 # Week 3: Polars Descriptive Statistics Project
 ## This project builds upon the previous project to run some descriptive analytics and present the results using polars and MatplotLib
