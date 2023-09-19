@@ -46,68 +46,64 @@ Things included are:
 
 # Continuous Integration with GitHub Actions for Python Data Science Project
 
-## Summary
+## Project Overview
 
-This project demonstrates the implementation of Continuous Integration (CI) using GitHub Actions for Python-based Data Science projects. CI helps maintain code quality and consistency throughout development. The workflows include linting, formatting, dependency installation, and running tests, ensuring these steps automatically occur with every push and pull request.
+This project serves as a practical guide to implement Continuous Integration (CI) using GitHub Actions for Python-based Data Science projects, specifically leveraging the Polars library. The primary goal is to ensure code quality and consistency during the development process. The CI workflows encompass essential steps such as linting, code formatting, dependency management, and running comprehensive tests, ensuring that these critical processes are automated for every code change.
 
 ## Project Structure
 
 ### Jupyter Notebook (src/DescriptiveStats.ipynb)
 
-- Contains cells performing descriptive statistics using Pandas.
-- Validated using the nbval plugin for pytest.
+- Contains interactive cells that perform descriptive statistical analysis using the Polars library.
+- Rigorously validated using the nbval plugin for pytest.
 
 ### Python Script (src/script_descriptive_stats.py)
 
-- Executes the same descriptive statistics using Pandas.
+- Provides a script-based approach to executing the same descriptive statistical analysis using the Polars library.
 
 ### Shared Code (src/lib.py)
 
-- Holds shared code used by both the script and notebook.
+- Contains reusable code modules shared between the Jupyter Notebook and Python script, facilitating code organization and maintainability.
 
 ### Makefile
 
-Contains four commands (Run by GitHub Workflows on each Push and Pull):
+The Makefile includes the following essential commands executed by GitHub Workflows for every push and pull request:
 
-- **Test**: Run all tests (notebook, script, and lib).
-- **Format**: Format code with Python black.
-- **Lint**: Lint code with Ruff.
-- **OnInstall**: Install dependencies via `pip install -r requirements.txt`.
+- **Test**: Executes all available tests, including those for the notebook, script, and library.
+- **Format**: Utilizes the Polars-related code formatter for consistent code formatting.
+- **Lint**: Employs Polars-specific linting tools to maintain code quality.
+- **OnInstall**: Ensures that project dependencies are installed via `pip install -r requirements.txt`.
 
 ### Test Scripts
 
-- `test_script.py` (tests/test_script_descriptive_stats.py): Contains tests for the Python script.
-- `test_lib.py` (tests/test_lib.py): Includes tests for the library.
+- `test_script.py` (tests/test_script_descriptive_stats.py): Contains test cases specifically designed for validating the Python script.
+- `test_lib.py` (tests/test_lib.py): Encompasses tests targeting the library functionality to ensure robustness and correctness.
 
 ### Pinned requirements.txt
 
-Specifies exact versions of dependencies.
+- Lists specific versions of project dependencies to maintain consistency across environments.
 
 ## Getting Started
 
-To use this template:
+To effectively utilize this project template, follow these steps:
 
-1. Create a New Repository:
-   - Click the "Use this template" button or manually create a new repository using this template as a starting point.
+1. Repository Creation:
+   - Either click the "Use this template" button to create a new repository from this template or manually initialize a repository using this template as the foundation.
 
-2. Set Up CI/CD:
-   - Define CI/CD workflows by configuring the .github/workflows/ directory. Modify the workflows to suit your project's specific needs.
+2. CI/CD Configuration:
+   - Define your CI/CD workflows by configuring the `.github/workflows/` directory, tailoring them to your project's unique requirements.
 
-3. Start Code Space (Optional):
-   - If you prefer cloud-based development, click the "Code" button on the GitHub repository page and select "Open with Code Spaces."
+3. Cloud Development (Optional):
+   - Launch a cloud-based development environment by clicking the "Code" button on your GitHub repository page and selecting "Open with Code Spaces" for seamless coding without local setup.
 
 4. Customize Automation:
-   - Tailor automation scripts and rules in the .github/workflows/ directory. Configure issue management, release automation, and code quality checks as needed.
+   - Adapt automation scripts and rules within the `.github/workflows/` directory to align with your project's needs, including issue management, release automation, and code quality checks.
 
 5. Documentation:
    - Update the project's documentation to reflect your specific setup, workflows, and guidelines.
 
-6. Requirement.txt:
-   - Update the requirements.txt file to include all necessary Python packages.
-
-## License
-
-This project is licensed under the [License Name] License - see the [LICENSE.md](LICENSE.md) file for details.
+6. Requirements Management:
+   - Modify the `requirements.txt` file as needed to include or update Python package dependencies.
 
 
 ```python
