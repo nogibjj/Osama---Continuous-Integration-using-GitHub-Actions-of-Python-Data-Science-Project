@@ -6,44 +6,6 @@
 # Continuous Integration using GitHub Actions of Python Data Science Project
 ## This project provides a practical demonstration of how to implement Continuous Integration (CI) in Python-based Data Science projects using GitHub Actions. Embracing CI facilitates the preservation of code quality and uniformity during the entire development journey. The workflows encompass tasks such as code linting, formatting, dependency installation, and test execution. This guarantees that these essential procedures are automatically triggered with each repository push and pull request, streamlining the development process.
 
-
-## This repo includes the :
-
-* `Jupyter Notebook including script and the visualizations`
-
-* `Python Script`
-
-* `Presented Output and Code in PDF`
-
-* `Presented Output and Code in Markdown`
-
-* `Dockerfile`
-
-A set of libraries in requirements.txt
-
-Things included are:
-
-* `Makefile`
-
-* `Dataset import from Google Drive (Data from Kaggle)`
-
-* `Pytest`
-
-* `polars`
-
-* `Pylint`
-
-* `Codespaces Configuration`
-
-* `jupyter` and `ipython` 
-
-* `setuptools`
-  
-* `Matplotlib`
-
-* `githubactions`
-
-
 # Continuous Integration with GitHub Actions for Python Data Science Project
 
 ## Project Overview
@@ -104,6 +66,8 @@ To effectively utilize this project template, follow these steps:
 
 6. Requirements Management:
    - Modify the `requirements.txt` file as needed to include or update Python package dependencies.
+  
+# Our use case: Descriptive Statistics in Python Using Polars | Aircraft Damage Analytics
 
 
 ```python
