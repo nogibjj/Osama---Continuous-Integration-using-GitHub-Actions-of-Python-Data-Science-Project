@@ -24,6 +24,18 @@ def read_aircraft_data_from_google_drive(file_id):
                          low_memory=False, infer_schema_length=10000)
         
         return df
+        
+def calculate_strikes_max_damage(df):
+       strikes = {}
+    for c in df.columns:
+        column_name = c.split(" ")
+        # print(len(col_sep), col_sep)
+        if len(column_name) > 1 and column_name[1] == "Strike":
+            strikes[column_name[0]] = df[column_name[0] +
+            " Damage"].sum() / df[c].sum()
+    max_damaged_part = max(strikes, key=strikes.get)
+    print(max_damaged_part)
+    return strikes, max_damaged_part
 
 
 def return_25th_quantile(data_: pl.DataFrame, target: str) -> float:
@@ -58,13 +70,6 @@ def return_median(data_: pl.DataFrame, target: str) -> float:
     return target_median
 
 
- plt.bar(strikes.keys(), strikes.values())
-    plt.xticks(rotation=90)
-    plt.title("Aircraft Part Damage Probability")
-    max_damaged_part = max(strikes, key=strikes.get)
-    print(max_damaged_part)
-    return strikes, max_damaged_part
-
 def visualize_damage_probabilities(strikes):
     """
     Visualize the aircraft part damage probabilities using a bar chart
@@ -81,8 +86,10 @@ if __name__ == "__main__":
     file_id = "1TAD7Uyc9PjByt_q13uvGXGeubXnujnUi"
     TARGET_COLUMN = "Aircraft Mass"
     data = read_aircraft_data_from_google_drive(file_id)
+    strikes, most_risky_part = calculate_strikes_max_damage(data)
     print('Target Column: ', 'TARGET_COLUMN')
     print('25th Quantile: ', return_25th_quantile(data, TARGET_COLUMN))
     print('Mean: ', return_mean(data, TARGET_COLUMN))
     print('Median: ', return_median(data, TARGET_COLUMN))
     print("Standard Deviation: ", return_std_dev(data, TARGET_COLUMN))
+    print('The part most likely to be damaged is', )
