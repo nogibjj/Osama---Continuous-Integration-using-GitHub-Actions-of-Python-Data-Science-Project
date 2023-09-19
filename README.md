@@ -3,8 +3,8 @@
 [![Lint](https://github.com/nogibjj/Osama---Continuous-Integration-using-GitHub-Actions-of-Python-Data-Science-Project/actions/workflows/lint.yml/badge.svg)](https://github.com/nogibjj/Osama---Continuous-Integration-using-GitHub-Actions-of-Python-Data-Science-Project/actions/workflows/lint.yml)
 [![Test](https://github.com/nogibjj/Osama---Continuous-Integration-using-GitHub-Actions-of-Python-Data-Science-Project/actions/workflows/test.yml/badge.svg)](https://github.com/nogibjj/Osama---Continuous-Integration-using-GitHub-Actions-of-Python-Data-Science-Project/actions/workflows/test.yml)
 
-# Week 3: Polars Descriptive Statistics Project
-## This project builds upon the previous project to run some descriptive analytics and present the results using polars and MatplotLib
+# Continuous Integration using GitHub Actions of Python Data Science Project
+## This project provides a practical demonstration of how to implement Continuous Integration (CI) in Python-based Data Science projects using GitHub Actions. Embracing CI facilitates the preservation of code quality and uniformity during the entire development journey. The workflows encompass tasks such as code linting, formatting, dependency installation, and test execution. This guarantees that these essential procedures are automatically triggered with each repository push and pull request, streamlining the development process.
 
 
 ## This repo includes the :
@@ -44,14 +44,70 @@ Things included are:
 * `githubactions`
 
 
-# Descriptive Statistics in Polars
-## Below are the commands executed, the analytics obtained, and the visualizations generated:
+# Continuous Integration with GitHub Actions for Python Data Science Project
 
+## Summary
 
-# Polars Descriptive Statistics Assignment
-## Aircraft wildlife strikes data | 1990 - 2015
+This project demonstrates the implementation of Continuous Integration (CI) using GitHub Actions for Python-based Data Science projects. CI helps maintain code quality and consistency throughout development. The workflows include linting, formatting, dependency installation, and running tests, ensuring these steps automatically occur with every push and pull request.
 
-In this exercise, we will extract and analyze aircraft wildlife strikes data, and we will determine the probability of each part of an aircraft getting damaged by an aircraft wildlife strike
+## Project Structure
+
+### Jupyter Notebook (src/DescriptiveStats.ipynb)
+
+- Contains cells performing descriptive statistics using Pandas.
+- Validated using the nbval plugin for pytest.
+
+### Python Script (src/script_descriptive_stats.py)
+
+- Executes the same descriptive statistics using Pandas.
+
+### Shared Code (src/lib.py)
+
+- Holds shared code used by both the script and notebook.
+
+### Makefile
+
+Contains four commands (Run by GitHub Workflows on each Push and Pull):
+
+- **Test**: Run all tests (notebook, script, and lib).
+- **Format**: Format code with Python black.
+- **Lint**: Lint code with Ruff.
+- **OnInstall**: Install dependencies via `pip install -r requirements.txt`.
+
+### Test Scripts
+
+- `test_script.py` (tests/test_script_descriptive_stats.py): Contains tests for the Python script.
+- `test_lib.py` (tests/test_lib.py): Includes tests for the library.
+
+### Pinned requirements.txt
+
+Specifies exact versions of dependencies.
+
+## Getting Started
+
+To use this template:
+
+1. Create a New Repository:
+   - Click the "Use this template" button or manually create a new repository using this template as a starting point.
+
+2. Set Up CI/CD:
+   - Define CI/CD workflows by configuring the .github/workflows/ directory. Modify the workflows to suit your project's specific needs.
+
+3. Start Code Space (Optional):
+   - If you prefer cloud-based development, click the "Code" button on the GitHub repository page and select "Open with Code Spaces."
+
+4. Customize Automation:
+   - Tailor automation scripts and rules in the .github/workflows/ directory. Configure issue management, release automation, and code quality checks as needed.
+
+5. Documentation:
+   - Update the project's documentation to reflect your specific setup, workflows, and guidelines.
+
+6. Requirement.txt:
+   - Update the requirements.txt file to include all necessary Python packages.
+
+## License
+
+This project is licensed under the [License Name] License - see the [LICENSE.md](LICENSE.md) file for details.
 
 
 ```python
