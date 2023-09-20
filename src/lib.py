@@ -116,8 +116,10 @@ if __name__ == "__main__":
     try:
         generate_summary_report(data, TARGET_COLUMN)
         visualize_damage_probabilities(strikes)
-    except Exception:
+    except FileNotFoundError:
         generate_summary_report(data, TARGET_COLUMN,
                                 summary_report_path = r'../output/generated_report.md')
-        visualize_damage_probabilities(strikes,
-                                        visualization_path = '../output/visualization.png')
+        visualize_damage_probabilities(
+                            strikes,
+                            visualization_path = 
+                            '../output/visualization.png')
