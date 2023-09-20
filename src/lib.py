@@ -70,7 +70,7 @@ def return_median(data_: pl.DataFrame, target: str) -> float:
     return target_median
 
 
-def visualize_damage_probabilities(strikes):
+def visualize_damage_probabilities(strikes, jupyter = False):
     """
     Visualize the aircraft part damage probabilities using a bar chart
     Args:
@@ -81,6 +81,20 @@ def visualize_damage_probabilities(strikes):
     plt.bar(strikes.keys(), strikes.values())
     plt.xticks(rotation=90)
     plt.title("Aircraft Part Damage Probability")
+        plt.show()
+
+    visualization_path = 'output/visualization.png'
+    if not jupyter:
+        plt.savefig(visualization_path)  # save png
+
+
+def generate_summary_report(data, TARGET_COLUMN) 
+        summary_report_path = r'output/generated_report.md'
+        with open(summary_report_path, "w", encoding="utf-8") as report:
+            report.write(f'Mean: {round(return_mean(data, TARGET_COLUMN), 3)} \n \n \n')
+            report.write(f'Median: {round(return_median(data, TARGET_COLUMN), 3)} \n \n \n')
+            report.write(f'Standard Deviation: {round(return_std_dev(data, TARGET_COLUMN), 3)} \n \n \n')
+            report.write("\n![Visualization](visualization.png)\n")
   
 if __name__ == "__main__":
     file_id = "1TAD7Uyc9PjByt_q13uvGXGeubXnujnUi"
@@ -92,4 +106,5 @@ if __name__ == "__main__":
     print('Mean: ', return_mean(data, TARGET_COLUMN))
     print('Median: ', return_median(data, TARGET_COLUMN))
     print("Standard Deviation: ", return_std_dev(data, TARGET_COLUMN))
-    print('The part most likely to be damaged is', )
+    print('The part most likely to be damaged is the', most_risky_part)
+    visualize_damage_probabilities(strikes)
