@@ -17,7 +17,7 @@ jobs:
       - name: test
         run: make test
       - name: Run main script
-        run: 
+        run: |
           cd src
           python Polars_Descriptive_Stats_Script.py
           cd ..
