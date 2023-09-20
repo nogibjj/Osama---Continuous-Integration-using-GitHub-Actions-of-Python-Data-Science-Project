@@ -29,8 +29,10 @@ def AircraftAnalytics(file_id = '1TAD7Uyc9PjByt_q13uvGXGeubXnujnUi',
     except FileNotFoundError:
         lib.generate_summary_report(df, TARGET_COLUMN,
                                 summary_report_path = r'../output/generated_report.md')
-        lib.visualize_damage_probabilities(s,
-                                        visualization_path = '../output/visualization.png')
+        lib.visualize_damage_probabilities(
+                                        s,
+                                        visualization_path= 
+                                        '../output/visualization.png')
 
 
 if __name__ == "__main__":
