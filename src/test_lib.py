@@ -16,7 +16,7 @@ def test_descriptive_stats():
     without raising exceptions and if they return numerical results.
     """
     # Load aircraft data (replace with your specific file_id)
-    target_column = Speed
+    target_column = 'Speed'
     file_id = "1TAD7Uyc9PjByt_q13uvGXGeubXnujnUi"
     data = read_aircraft_data_from_google_drive(file_id)
 
