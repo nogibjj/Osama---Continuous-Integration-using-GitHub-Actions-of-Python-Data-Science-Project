@@ -162,6 +162,6 @@ print(max(strikes, key=strikes.get))
 
 
     
-![png](polars_descriptive_stats_files/polars_descriptive_stats_8_1.png)
+![png](Polars_Descriptive_Stats_files/Polars_Descriptive_Stats_8_0.png)
     
 
