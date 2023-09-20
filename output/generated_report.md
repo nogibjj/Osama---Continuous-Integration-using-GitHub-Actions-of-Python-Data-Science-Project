@@ -1,4 +1,4 @@
-Mean: 141.926 
+The target column that we are considering is SpeedMean: 141.926 
  
  
 Median: 138.0 

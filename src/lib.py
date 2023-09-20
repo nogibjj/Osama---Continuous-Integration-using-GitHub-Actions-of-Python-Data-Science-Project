@@ -86,14 +86,14 @@ def visualize_damage_probabilities(strikes, jupyter = False):
     plt.title("Aircraft Part Damage Probability")
     plt.show()
 
-    visualization_path = 'output/visualization.png'
+    visualization_path = '../output/visualization.png'
     if not jupyter:
         plt.savefig(visualization_path)  # save png
 
 
 def generate_summary_report(data, TARGET_COLUMN): 
     '''Generate a summary report of the data and save it to a markdown file'''
-    summary_report_path = r'output/generated_report.md'
+    summary_report_path = r'../output/generated_report.md'
     with open(summary_report_path, "w", encoding="utf-8") as report:
         report.write(f'The target column that we are considering is {TARGET_COLUMN}')
         report.write(f'Mean: {round(return_mean(data, TARGET_COLUMN), 3)} \n \n \n')
