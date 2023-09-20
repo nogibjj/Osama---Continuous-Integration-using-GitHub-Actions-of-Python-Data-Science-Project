@@ -4,7 +4,7 @@ from lib import (
     return_25th_quantile,
     return_mean,
     return_std_dev,
-    return_median,
+    return_median
 )
 
 
@@ -16,8 +16,8 @@ def test_descriptive_stats():
     without raising exceptions and if they return numerical results.
     """
     # Load aircraft data (replace with your specific file_id)
-    target_column = 'Speed'
-    file_id = "1TAD7Uyc9PjByt_q13uvGXGeubXnujnUi"
+    target_column = 'Weight'
+    file_id = '1TAD7Uyc9PjByt_q13uvGXGeubXnujnUi'
     data = read_aircraft_data_from_google_drive(file_id)
 
     # Test calculate_strikes_max_damage function
