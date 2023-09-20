@@ -7,48 +7,26 @@
 # and we will determine the probability of 
 # each part of an aircraft getting damaged 
 # by an aircraft wildlife strike
-import io
-import polars as pl
-import matplotlib.pyplot as plt
-import requests
 
+import lib
 
 # Import the necessary libraries
-def AircraftAnalytics():
+def AircraftAnalytics(file_id = '1TAD7Uyc9PjByt_q13uvGXGeubXnujnUi', TARGET_COLUMN = "Aircraft Mass"):
     """This is a function to run some analytics
     on aircraft wildlife accidents data"""   
     # Read our data from Google Drive
-    file_id = "1TAD7Uyc9PjByt_q13uvGXGeubXnujnUi"
     url = f"https://drive.google.com/uc?id={file_id}"
+
     # Download the contents of the CSV file
-    download = requests.get(url, timeout = 1000).content
-    # Read the CSV file into a Polars DataFrame
-    df = pl.read_csv(io.StringIO(download.decode("utf-8")),
-                low_memory=False, infer_schema_length=10000)
-    # Explore the data
-    print(df.head())
-    #df.info()
-    print(df.describe())
-    print(df.mean())
-    # # Now we are going to calculate the probability of 
-    # each part of the flight getting damaged and plot these probabilities
-    strikes = {}
-    for c in df.columns:
-        column_name = c.split(" ")
-        # print(len(col_sep), col_sep)
-        if len(column_name) > 1 and column_name[1] == "Strike":
-            strikes[column_name[0]] = df[column_name[0] +
-            " Damage"].sum() / df[c].sum()
     
-    
-    # Calculate the probability of each part of the aircraft
-    #getting damaged and find the part with the highest damage probability
-    plt.bar(strikes.keys(), strikes.values())
-    plt.xticks(rotation=90)
-    plt.title("Aircraft Part Damage Probability")
-    max_damaged_part = max(strikes, key=strikes.get)
-    print(max_damaged_part)
-    return strikes, max_damaged_part
+    df = lib.read_aircraft_data_from_google_drive(file_id)
+    s, m = lib.calculate_strikes_max_damage(df)
+    print(lib.return_25th_quantile(df, TARGET_COLUMN))
+    print(lib.return_mean(df, TARGET_COLUMN))
+    print(lib.return_std_dev(df, TARGET_COLUMN))
+    print(lib.return_25th_quantile(df, TARGET_COLUMN))
+    lib.visualize_damage_probabilities(s)
+    lib.generate_summary_report(df, TARGET_COLUMN)
 
 if __name__ == "__main__":
-    s, m = AircraftAnalytics()
+    AircraftAnalytics()
