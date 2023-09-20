@@ -1,4 +1,3 @@
-import pytest
 from lib import (
     read_aircraft_data_from_google_drive,
     calculate_strikes_max_damage,

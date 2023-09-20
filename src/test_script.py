@@ -17,6 +17,5 @@ def test_AircraftAnalytics():
         pytest.fail(f"AircraftAnalytics raised an exception: {str(e)}")
 
 
-
 if __name__ == "__main__":
-    test_AircraftAnalytics():
+    test_AircraftAnalytics()
