@@ -13,7 +13,5 @@ format:
 lint:
 	nbqa ruff src/*.ipynb
 	ruff check src/*.py
-deploy:
-	python aircraft_analytics.py
-		
+
 all: install lint format test 
