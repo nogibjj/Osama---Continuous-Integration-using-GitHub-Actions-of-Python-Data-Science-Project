@@ -92,8 +92,8 @@ def visualize_damage_probabilities(strikes, jupyter = False):
 def generate_summary_report(data, TARGET_COLUMN): 
         summary_report_path = r'output/generated_report.md'
         with open(summary_report_path, "w", encoding="utf-8") as report:
-            report.write(f'Mean: {round(return_mean
-                                        (data, TARGET_COLUMN), 3)} \n \n \n')
+            report.write(f'Mean: {round(return_mean(data,
+                                                     TARGET_COLUMN), 3)} \n \n \n')
             report.write(f'Median: {round(return_median
                                           (data, TARGET_COLUMN), 3)} \n \n \n')
             report.write(f'Standard Deviation: {
