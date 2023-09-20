@@ -1,6 +1,8 @@
 """Python Polars descriptive statistics common functions"""
 import polars as pl
 import matplotlib.pyplot as plt
+import io
+import requests
 
 def read_aircraft_data_from_google_drive(file_id):
     """
@@ -95,7 +97,7 @@ def generate_summary_report(data, TARGET_COLUMN):
     with open(summary_report_path, "w", encoding="utf-8") as report:
         report.write(f'Mean: {round(return_mean(data, TARGET_COLUMN), 3)} \n \n \n')
         report.write(f'Median: {round(return_median(data, TARGET_COLUMN), 3)} \n \n \n')
-        report.write(f'Standard Deviation: {round(return_std_dev(data, TARGET_COLUMN), 3)} \n \n \n')
+        report.write(f'StdDev: {round(return_std_dev(data, TARGET_COLUMN), 3)} \n \n \n')
         report.write("\n![Visualization](visualization.png)\n")
   
 if __name__ == "__main__":
