@@ -36,11 +36,7 @@ def calculate_strikes_max_damage(df):
         if len(column_name) > 1 and column_name[1] == "Strike":
             strikes[column_name[0]] = df[column_name[0] +
             " Damage"].sum() / df[c].sum()
-    try:
-        max_damaged_part = max(strikes, key=strikes.get)
-    except Exception:
-        pass
-    print(max_damaged_part)
+    max_damaged_part = max(strikes, key=strikes.get)
     return strikes, max_damaged_part
 
 
