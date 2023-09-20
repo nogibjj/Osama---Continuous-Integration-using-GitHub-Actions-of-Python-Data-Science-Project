@@ -26,7 +26,7 @@ def AircraftAnalytics(file_id = '1TAD7Uyc9PjByt_q13uvGXGeubXnujnUi',
     lib.visualize_damage_probabilities(s)
     try:
         lib.generate_summary_report(df, TARGET_COLUMN)
-    except:
+    except Exception:
         lib.generate_summary_report(df, TARGET_COLUMN,
                                 summary_report_path = r'../output/generated_report.md')
 
