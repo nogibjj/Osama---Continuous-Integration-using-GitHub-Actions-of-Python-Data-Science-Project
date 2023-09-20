@@ -115,6 +115,6 @@ if __name__ == "__main__":
     visualize_damage_probabilities(strikes)
     try:
         generate_summary_report(data, TARGET_COLUMN)
-    except:
+    except Exception:
         generate_summary_report(data, TARGET_COLUMN,
                                 summary_report_path = r'../output/generated_report.md')
