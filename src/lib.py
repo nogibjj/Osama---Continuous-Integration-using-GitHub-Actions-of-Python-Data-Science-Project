@@ -91,9 +91,9 @@ def visualize_damage_probabilities(strikes, jupyter = False):
         plt.savefig(visualization_path)  # save png
 
 
-def generate_summary_report(data, TARGET_COLUMN): 
+def generate_summary_report(data, TARGET_COLUMN,
+                            summary_report_path = r'output/generated_report.md'): 
     '''Generate a summary report of the data and save it to a markdown file'''
-    summary_report_path = r'output/generated_report.md'
     with open(summary_report_path, "w", encoding="utf-8") as report:
         report.write(f'The target that we are working with is {TARGET_COLUMN} \n \n \n')
         report.write(f'Mean: {round(return_mean(data, TARGET_COLUMN), 3)} \n \n \n')
@@ -113,3 +113,8 @@ if __name__ == "__main__":
     print("Standard Deviation: ", return_std_dev(data, TARGET_COLUMN))
     print('The part most likely to be damaged is the', most_risky_part)
     visualize_damage_probabilities(strikes)
+    try:
+        generate_summary_report(data, TARGET_COLUMN)
+    except:
+        generate_summary_report(data, TARGET_COLUMN,
+                                summary_report_path = r'../output/generated_report.md')
