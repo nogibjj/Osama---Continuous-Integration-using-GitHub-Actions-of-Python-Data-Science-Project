@@ -1,10 +1,10 @@
-The target column that we are considering is SpeedMean: 141.926 
+The target column that we are considering is HeightMean: 831.032 
  
  
-Median: 138.0 
+Median: 50.0 
  
  
-StdDev: 46.906 
+StdDev: 1803.651 
  
  
 
