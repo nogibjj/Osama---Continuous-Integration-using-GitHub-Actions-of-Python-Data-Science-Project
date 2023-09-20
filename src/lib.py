@@ -82,7 +82,7 @@ def visualize_damage_probabilities(strikes, jupyter = False):
     plt.bar(strikes.keys(), strikes.values())
     plt.xticks(rotation=90)
     plt.title("Aircraft Part Damage Probability")
-        plt.show()
+    plt.show()
 
     visualization_path = 'output/visualization.png'
     if not jupyter:
