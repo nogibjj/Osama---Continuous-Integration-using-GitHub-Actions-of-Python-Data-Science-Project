@@ -23,12 +23,15 @@ def AircraftAnalytics(file_id = '1TAD7Uyc9PjByt_q13uvGXGeubXnujnUi',
     print(lib.return_mean(df, TARGET_COLUMN))
     print(lib.return_std_dev(df, TARGET_COLUMN))
     print(lib.return_25th_quantile(df, TARGET_COLUMN))
-    lib.visualize_damage_probabilities(s)
     try:
         lib.generate_summary_report(df, TARGET_COLUMN)
-    except Exception:
+        lib.visualize_damage_probabilities(s)
+    except FileNotFoundError:
         lib.generate_summary_report(df, TARGET_COLUMN,
                                 summary_report_path = r'../output/generated_report.md')
+        lib.visualize_damage_probabilities(s,
+                                        visualization_path = '../output/visualization.png')
+
 
 if __name__ == "__main__":
     AircraftAnalytics()

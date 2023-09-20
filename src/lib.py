@@ -73,7 +73,8 @@ def return_median(data_: pl.DataFrame, target: str) -> float:
     return target_median
 
 
-def visualize_damage_probabilities(strikes, jupyter = False):
+def visualize_damage_probabilities(strikes, jupyter = False,
+                                    visualization_path = 'output/visualization.png'):
     """
     Visualize the aircraft part damage probabilities using a bar chart
     Args:
@@ -112,9 +113,11 @@ if __name__ == "__main__":
     print('Median: ', return_median(data, TARGET_COLUMN))
     print("Standard Deviation: ", return_std_dev(data, TARGET_COLUMN))
     print('The part most likely to be damaged is the', most_risky_part)
-    visualize_damage_probabilities(strikes)
     try:
         generate_summary_report(data, TARGET_COLUMN)
+        visualize_damage_probabilities(strikes)
     except Exception:
         generate_summary_report(data, TARGET_COLUMN,
                                 summary_report_path = r'../output/generated_report.md')
+        visualize_damage_probabilities(strikes,
+                                        visualization_path = '../output/visualization.png')
