@@ -1,13 +1,13 @@
-The target that we are working with is Height 
+The target that we are working with is Speed 
  
  
-Mean: 831.032 
+Mean: 141.926 
  
  
-Median: 50.0 
+Median: 138.0 
  
  
-StdDev: 1803.651 
+StdDev: 46.906 
  
  
 
