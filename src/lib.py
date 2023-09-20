@@ -4,7 +4,8 @@ import matplotlib.pyplot as plt
 
 def read_aircraft_data_from_google_drive(file_id):
     """
-    Read aircraft wildlife strikes data from Google Drive and return it as a Polars DataFrame.
+    Read aircraft wildlife strikes data from 
+    Google Drive and return it as a Polars DataFrame.
 
     Args:
     - file_id (str): The ID of the file hosted on Google Drive.
@@ -26,7 +27,7 @@ def read_aircraft_data_from_google_drive(file_id):
         return df
         
 def calculate_strikes_max_damage(df):
-       strikes = {}
+    strikes = {}
     for c in df.columns:
         column_name = c.split(" ")
         # print(len(col_sep), col_sep)
@@ -91,9 +92,12 @@ def visualize_damage_probabilities(strikes, jupyter = False):
 def generate_summary_report(data, TARGET_COLUMN) 
         summary_report_path = r'output/generated_report.md'
         with open(summary_report_path, "w", encoding="utf-8") as report:
-            report.write(f'Mean: {round(return_mean(data, TARGET_COLUMN), 3)} \n \n \n')
-            report.write(f'Median: {round(return_median(data, TARGET_COLUMN), 3)} \n \n \n')
-            report.write(f'Standard Deviation: {round(return_std_dev(data, TARGET_COLUMN), 3)} \n \n \n')
+            report.write(f'Mean: {round(return_mean
+                                        (data, TARGET_COLUMN), 3)} \n \n \n')
+            report.write(f'Median: {round(return_median
+                                          (data, TARGET_COLUMN), 3)} \n \n \n')
+            report.write(f'Standard Deviation: {round
+                                                (return_std_dev(data, TARGET_COLUMN), 3)} \n \n \n')
             report.write("\n![Visualization](visualization.png)\n")
   
 if __name__ == "__main__":
