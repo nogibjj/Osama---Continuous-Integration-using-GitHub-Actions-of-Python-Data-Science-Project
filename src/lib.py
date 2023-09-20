@@ -96,8 +96,8 @@ def generate_summary_report(data, TARGET_COLUMN)
                                         (data, TARGET_COLUMN), 3)} \n \n \n')
             report.write(f'Median: {round(return_median
                                           (data, TARGET_COLUMN), 3)} \n \n \n')
-            report.write(f'Standard Deviation: {round
-                                                (return_std_dev(data, TARGET_COLUMN), 3)} \n \n \n')
+            report.write(f'Standard Deviation: {
+                round(return_std_dev(data, TARGET_COLUMN), 3)} \n \n \n')
             report.write("\n![Visualization](visualization.png)\n")
   
 if __name__ == "__main__":
