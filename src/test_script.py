@@ -19,5 +19,4 @@ def test_AircraftAnalytics():
 
 
 if __name__ == "__main__":
-    # Run the tests using pytest
-    pytest.main()
+    test_AircraftAnalytics():
