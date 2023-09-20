@@ -24,7 +24,10 @@ def AircraftAnalytics(file_id = '1TAD7Uyc9PjByt_q13uvGXGeubXnujnUi',
     print(lib.return_std_dev(df, TARGET_COLUMN))
     print(lib.return_25th_quantile(df, TARGET_COLUMN))
     lib.visualize_damage_probabilities(s)
-    lib.generate_summary_report(df, TARGET_COLUMN)
+    try:
+        lib.generate_summary_report(df, TARGET_COLUMN)
+    except Exception as e:
+        continue
 
 if __name__ == "__main__":
     AircraftAnalytics()
