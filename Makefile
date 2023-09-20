@@ -7,12 +7,12 @@ test:
 	python -m pytest --nbval src/*.ipynb
 
 format:	
-	black *.py
-	nbqa black *.ipynb
+	black src/*.py
+	nbqa black src/*.ipynb
 
 lint:
-	nbqa ruff *.ipynb
-	ruff check *.py
+	nbqa ruff src/*.ipynb
+	ruff check src/*.py
 deploy:
 	python aircraft_analytics.py
 		
