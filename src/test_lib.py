@@ -16,6 +16,7 @@ def test_descriptive_stats():
     without raising exceptions and if they return numerical results.
     """
     # Load aircraft data (replace with your specific file_id)
+    target_column = Speed
     file_id = "1TAD7Uyc9PjByt_q13uvGXGeubXnujnUi"
     data = read_aircraft_data_from_google_drive(file_id)
 
@@ -25,19 +26,19 @@ def test_descriptive_stats():
     assert isinstance(most_risky_part, str)
 
     # Test return_25th_quantile function
-    quantile_25 = return_25th_quantile(data, "Your_Target_Column_Name")
+    quantile_25 = return_25th_quantile(data, target_column)
     assert isinstance(quantile_25, float)
 
     # Test return_mean function
-    mean_value = return_mean(data, "Your_Target_Column_Name")
+    mean_value = return_mean(data, target_column)
     assert isinstance(mean_value, float)
 
     # Test return_std_dev function
-    std_deviation = return_std_dev(data, "Your_Target_Column_Name")
+    std_deviation = return_std_dev(data, target_column)
     assert isinstance(std_deviation, float)
 
     # Test return_median function
-    median_value = return_median(data, "Your_Target_Column_Name")
+    median_value = return_median(data, target_column)
     assert isinstance(median_value, float)
 
 if __name__ == "__main__":
