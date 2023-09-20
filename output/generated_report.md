@@ -1,10 +1,10 @@
-Mean: 3.511 
+Mean: 141.926 
  
  
-Median: 4.0 
+Median: 138.0 
  
  
-StdDev: 0.874 
+StdDev: 46.906 
  
  
 
