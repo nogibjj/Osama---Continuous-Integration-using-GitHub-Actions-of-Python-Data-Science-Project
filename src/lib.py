@@ -16,16 +16,16 @@ def read_aircraft_data_from_google_drive(file_id):
     # Construct the URL for the Google Drive file
     url = f"https://drive.google.com/uc?id={file_id}"
     
-    try:
-        # Download the contents of the CSV file
-        download = requests.get(url, timeout=1000).content
+    
+    # Download the contents of the CSV file
+    download = requests.get(url, timeout=1000).content
 
-        # Read the CSV file into a Polars DataFrame
-        df = pl.read_csv(io.StringIO(download.decode("utf-8")),
-                         low_memory=False, infer_schema_length=10000)
-        
-        return df
-        
+    # Read the CSV file into a Polars DataFrame
+    df = pl.read_csv(io.StringIO(download.decode("utf-8")),
+                     low_memory=False, infer_schema_length=10000)
+    
+    return df
+    
 def calculate_strikes_max_damage(df):
     strikes = {}
     for c in df.columns:
