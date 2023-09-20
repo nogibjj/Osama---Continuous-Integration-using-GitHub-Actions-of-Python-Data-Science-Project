@@ -1,13 +1,13 @@
-The target that we are working with is Speed 
+The target that we are working with is Aircraft Mass 
  
  
-Mean: 141.926 
+Mean: 3.511 
  
  
-Median: 138.0 
+Median: 4.0 
  
  
-StdDev: 46.906 
+StdDev: 0.874 
  
  
 
