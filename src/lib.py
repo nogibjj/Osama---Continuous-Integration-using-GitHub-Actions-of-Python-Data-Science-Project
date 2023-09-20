@@ -95,7 +95,7 @@ def generate_summary_report(data, TARGET_COLUMN):
     '''Generate a summary report of the data and save it to a markdown file'''
     summary_report_path = r'../output/generated_report.md'
     with open(summary_report_path, "w", encoding="utf-8") as report:
-        report.write(f'The target column that we are considering is {TARGET_COLUMN}')
+        report.write(f'The target that we are considering is {TARGET_COLUMN} \n \n \n')
         report.write(f'Mean: {round(return_mean(data, TARGET_COLUMN), 3)} \n \n \n')
         report.write(f'Median: {round(return_median(data, TARGET_COLUMN), 3)} \n \n \n')
         report.write(f'StdDev: {round(return_std_dev(data,TARGET_COLUMN), 3)} \n \n \n')
