@@ -89,7 +89,7 @@ def visualize_damage_probabilities(strikes, jupyter = False):
         plt.savefig(visualization_path)  # save png
 
 
-def generate_summary_report(data, TARGET_COLUMN) 
+def generate_summary_report(data, TARGET_COLUMN): 
         summary_report_path = r'output/generated_report.md'
         with open(summary_report_path, "w", encoding="utf-8") as report:
             report.write(f'Mean: {round(return_mean
