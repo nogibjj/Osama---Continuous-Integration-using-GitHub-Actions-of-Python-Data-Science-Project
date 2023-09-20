@@ -1,4 +1,7 @@
-The target column that we are considering is HeightMean: 831.032 
+The target that we are working with is Height 
+ 
+ 
+Mean: 831.032 
  
  
 Median: 50.0 
